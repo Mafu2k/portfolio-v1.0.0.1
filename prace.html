@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prace - ARCH STUDIO</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header>
+  <nav>
+    <a href="index.html" class="logo">ARCH STUDIO</a>
+    <ul>
+      <li><a href="index.html" class="nav-link">O mnie</a></li>
+      <li><a href="prace.html" class="nav-link">Prace</a></li>
+      <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="all-works">
+  <h1 class="section-title">Portfolio</h1>
+  <div class="projects-grid">
+    <div class="project-card animate-on-scroll" onclick="toggleFullscreen(this)">
+      <img src="images/projekt1.jpg" alt="Projekt 1">
+      <div class="project-info">
+        <h3>Nowoczesny Dom Jednorodzinny</h3>
+        <p>Projekt domu z 2023 roku, łączący nowoczesność z tradycją. Wykonany z użyciem ekologicznych materiałów.</p>
+      </div>
+      <div class="fullscreen-description">
+        <p>Projekt domu z 2023 roku, łączący nowoczesność z tradycją. Wykonany z użyciem ekologicznych materiałów.</p>
+      </div>
+    </div>
+
+    <div class="project-card animate-on-scroll" onclick="toggleFullscreen(this)">
+      <img src="images/projekt2.jpg" alt="Projekt 2">
+      <div class="project-info">
+        <h3>Rewitalizacja Przestrzeni Miejskiej</h3>
+        <p>Projekt publiczny z 2022 roku, mający na celu ożywienie centrum miasta poprzez wprowadzenie zieleni i nowoczesnych rozwiązań.</p>
+      </div>
+      <div class="fullscreen-description">
+        <p>Projekt publiczny z 2022 roku, mający na celu ożywienie centrum miasta poprzez wprowadzenie zieleni i nowoczesnych rozwiązań.</p>
+      </div>
+    </div>
+
+    <div class="project-card animate-on-scroll" onclick="toggleFullscreen(this)">
+      <img src="images/projekt3.jpg" alt="Projekt 3">
+      <div class="project-info">
+        <h3>Biurowiec Ekologiczny</h3>
+        <p>Certyfikowany projekt BREEAM, łączący nowoczesną architekturę z zrównoważonym rozwojem.</p>
+      </div>
+      <div class="fullscreen-description">
+        <p>Certyfikowany projekt BREEAM, łączący nowoczesną architekturę z zrównoważonym rozwojem.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 ARCH STUDIO</p>
+</footer>
+
+<script src="animacje.js"></script>
+</body>
+</html>
