@@ -22,10 +22,12 @@ const ScrollRestoration: React.FC = () => {
   return null;
 };
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const App: React.FC = () => {
   return (
     <ReactLenis root options={{ lerp: 0.08, smoothWheel: true }}>
-      <Router>
+      <Router basename={basename}>
         <ScrollRestoration />
         <CustomCursor />
         <div className="app-container">
