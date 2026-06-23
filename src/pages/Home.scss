@@ -1,0 +1,326 @@
+.home {
+  .hero {
+    position: relative;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &__inner {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $space-12;
+      padding-top: $space-40;
+      padding-bottom: $space-16;
+    }
+
+    &__eyebrow {
+      display: flex;
+      align-items: center;
+      gap: $space-4;
+      margin-bottom: $space-8;
+    }
+
+    &__eyebrow-line {
+      flex: 1;
+      max-width: 120px;
+      height: 1px;
+      background: $color-line;
+    }
+
+    &__title {
+      font-family: $font-display;
+      font-size: $text-hero;
+      font-weight: 300;
+      font-style: italic;
+      line-height: 0.9;
+      letter-spacing: -0.04em;
+      color: $color-ink;
+    }
+
+    &__line {
+      display: block;
+      overflow: hidden;
+      padding-bottom: 0.08em;
+    }
+
+    &__line-inner {
+      display: block;
+      will-change: transform;
+    }
+
+    &__line--accent &__line-inner {
+      color: transparent;
+      -webkit-text-stroke: 1.2px $color-ink;
+      text-stroke: 1.2px $color-ink;
+    }
+
+    &__intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: $space-10;
+      padding-top: $space-8;
+      border-top: 1px solid $color-line;
+
+      @media (max-width: 720px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: $space-6;
+      }
+    }
+
+    &__bio {
+      font-size: $text-base;
+      font-weight: 300;
+      color: $color-ink-muted;
+      max-width: 46ch;
+      line-height: 1.7;
+    }
+
+    &__banner {
+      width: 100%;
+      border-radius: $radius-md;
+      will-change: clip-path;
+    }
+
+    &__banner-tag {
+      position: absolute;
+      bottom: $space-5;
+      left: $space-5;
+      z-index: 2;
+      color: $color-ink-subtle;
+      font-size: $text-xs;
+    }
+
+    &__scroll {
+      position: absolute;
+      bottom: $space-8;
+      right: $space-8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: $space-3;
+      z-index: 2;
+
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+
+    &__scroll-label {
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      writing-mode: vertical-lr;
+      color: $color-ink-muted;
+    }
+
+    &__scroll-line {
+      width: 1px;
+      height: 48px;
+      background: $color-accent;
+      animation: scroll-pulse 2s $ease-out-expo infinite;
+    }
+  }
+
+  .about {
+    &__grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: $space-20;
+      align-items: start;
+
+      @media (max-width: 1024px) {
+        gap: $space-12;
+      }
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        gap: $space-16;
+      }
+    }
+
+    &__text-content {
+      display: flex;
+      flex-direction: column;
+      gap: $space-8;
+      align-items: flex-start;
+    }
+
+    &__label {
+      display: block;
+    }
+
+    &__heading {
+      font-size: $text-2xl;
+      font-style: italic;
+      max-width: 16ch;
+    }
+
+    &__bio {
+      font-size: $text-base;
+      max-width: 48ch;
+    }
+
+    &__metrics {
+      display: flex;
+      gap: $space-12;
+      margin-top: $space-12;
+      padding-top: $space-8;
+      border-top: 1px solid $color-line;
+
+      @media (max-width: 480px) {
+        gap: $space-8;
+        flex-wrap: wrap;
+      }
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      gap: $space-1;
+
+      &__value {
+        font-family: $font-display;
+        font-size: $text-xl;
+        font-weight: 300;
+        color: $color-ink;
+        line-height: 1;
+      }
+
+      &__label {
+        font-family: $font-body;
+        font-size: $text-xs;
+        color: $color-ink-muted;
+        font-weight: 300;
+        letter-spacing: 0.03em;
+      }
+    }
+
+    &__visual {
+      position: sticky;
+      top: 120px;
+
+      @media (max-width: 768px) {
+        position: static;
+      }
+    }
+
+    &__banner {
+      width: 100%;
+      border-radius: $radius-md;
+    }
+
+    &__banner-tag {
+      position: absolute;
+      bottom: $space-5;
+      left: $space-5;
+      color: $color-ink-subtle;
+      font-size: $text-xs;
+    }
+  }
+
+  .featured {
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: $space-4;
+      margin-bottom: $space-12;
+
+      @media (min-width: 768px) {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+
+    &__heading {
+      font-size: $text-2xl;
+      font-style: italic;
+    }
+  }
+
+  .process {
+    &__header {
+      margin-bottom: $space-16;
+      display: flex;
+      flex-direction: column;
+      gap: $space-4;
+    }
+
+    &__heading {
+      font-size: $text-2xl;
+      font-style: italic;
+    }
+
+    &__steps {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: $space-8;
+
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: $space-10 $space-8;
+      }
+
+      @media (max-width: 540px) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    &__line {
+      position: absolute;
+      top: 18px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $color-line;
+      transform-origin: left center;
+      will-change: transform;
+      z-index: 0;
+
+      @media (max-width: 900px) {
+        display: none;
+      }
+    }
+
+    &__step {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      gap: $space-4;
+    }
+
+    &__step-num {
+      font-size: $text-xs;
+      color: $color-accent;
+      display: block;
+    }
+
+    &__step-title {
+      font-family: $font-display;
+      font-size: $text-lg;
+      font-weight: 400;
+      font-style: italic;
+      color: $color-ink;
+      line-height: 1.2;
+    }
+
+    &__step-desc {
+      font-family: $font-body;
+      font-size: $text-sm;
+      color: $color-ink-muted;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+  }
+}
+
+@keyframes scroll-pulse {
+  0%, 100% { opacity: 1; transform: scaleY(1); transform-origin: top; }
+  50%       { opacity: 0.4; transform: scaleY(0.6); transform-origin: top; }
+}

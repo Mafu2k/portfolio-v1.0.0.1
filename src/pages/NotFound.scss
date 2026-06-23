@@ -1,0 +1,25 @@
+.not-found {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: $space-6;
+  padding: $space-40 $space-6 $space-24;
+
+  &__code {
+    font-family: $font-display;
+    font-size: $text-hero;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 0.9;
+    color: $color-ink;
+  }
+
+  &__desc {
+    font-size: $text-base;
+    color: $color-ink-muted;
+    max-width: 42ch;
+  }
+}

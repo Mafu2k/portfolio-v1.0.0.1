@@ -1,0 +1,13 @@
+{
+  "short_name": "Atelier Lorem",
+  "name": "Atelier Lorem — Studio architektury",
+  "icons": [{
+    "src": "icon.png",
+    "type": "image/png",
+    "sizes": "192x192"
+  }],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2EFE8",
+  "theme_color": "#F2EFE8"
+}

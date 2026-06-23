@@ -1,0 +1,163 @@
+$color-paper:          #F2EFE8;
+$color-paper-2:        #ECE8DE;
+$color-paper-3:        #E4DFD2;
+$color-banner:         #FFFFFF;
+
+$color-ink:            #16140F;
+$color-ink-2:          #2A2620;
+$color-ink-muted:      #6E675B;
+$color-ink-subtle:     #A39B8B;
+$color-ink-inverse:    #F2EFE8;
+
+$color-line:           rgba(22, 20, 15, 0.14);
+$color-line-subtle:    rgba(22, 20, 15, 0.08);
+$color-banner-line:    rgba(22, 20, 15, 0.10);
+
+$color-accent:         #8C7A5C;
+$color-accent-deep:    #6E5E45;
+$color-accent-soft:    rgba(140, 122, 92, 0.12);
+
+$font-display:  'Cormorant Garamond', Georgia, serif;
+$font-body:     'DM Sans', system-ui, sans-serif;
+$font-mono:     'JetBrains Mono', 'Fira Code', monospace;
+
+$text-xs:    clamp(0.75rem, 0.7rem + 0.25vw, 0.8125rem);
+$text-sm:    clamp(0.8125rem, 0.78rem + 0.3vw, 0.9375rem);
+$text-base:  clamp(0.9375rem, 0.88rem + 0.4vw, 1.0625rem);
+$text-md:    clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
+$text-lg:    clamp(1.375rem, 1.2rem + 0.875vw, 1.875rem);
+$text-xl:    clamp(1.875rem, 1.5rem + 1.875vw, 3rem);
+$text-2xl:   clamp(2.5rem, 1.9rem + 2.7vw, 4.5rem);
+$text-3xl:   clamp(3.25rem, 2.4rem + 3.6vw, 6rem);
+$text-hero:  clamp(3.5rem, 2rem + 7vw, 10rem);
+
+$space-1:   0.25rem;
+$space-2:   0.5rem;
+$space-3:   0.75rem;
+$space-4:   1rem;
+$space-5:   1.25rem;
+$space-6:   1.5rem;
+$space-8:   2rem;
+$space-10:  2.5rem;
+$space-12:  3rem;
+$space-16:  4rem;
+$space-20:  5rem;
+$space-24:  6rem;
+$space-32:  8rem;
+$space-40:  10rem;
+$space-48:  12rem;
+$space-64:  16rem;
+
+$radius-sm:   1px;
+$radius-md:   2px;
+$radius-lg:   4px;
+$radius-xl:   8px;
+$radius-full: 9999px;
+
+$z-noise:       0;
+$z-content:     1;
+$z-card:        10;
+$z-sticky:      100;
+$z-header:      200;
+$z-overlay:     300;
+$z-modal:       400;
+$z-cursor:      900;
+$z-transition:  1000;
+
+$ease-out-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+$ease-in-expo:    cubic-bezier(0.7, 0, 0.84, 0);
+$ease-in-out:     cubic-bezier(0.76, 0, 0.24, 1);
+$ease-elastic:    cubic-bezier(0.34, 1.56, 0.64, 1);
+$ease-smooth:     cubic-bezier(0.25, 0.1, 0.25, 1);
+
+$shadow-sm:     0 1px 2px rgba(22, 20, 15, 0.06);
+$shadow-md:     0 10px 30px -12px rgba(22, 20, 15, 0.18);
+$shadow-lg:     0 24px 60px -28px rgba(22, 20, 15, 0.28);
+$shadow-banner: 0 40px 80px -48px rgba(22, 20, 15, 0.35);
+
+@mixin glass($opacity: 0.72, $blur: 18px) {
+  background: rgba(242, 239, 232, $opacity);
+  backdrop-filter: blur($blur) saturate(140%);
+  -webkit-backdrop-filter: blur($blur) saturate(140%);
+}
+
+@mixin banner {
+  position: relative;
+  background: $color-banner;
+  border: 1px solid $color-banner-line;
+  box-shadow: $shadow-banner;
+  overflow: hidden;
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@mixin container($max: 1400px) {
+  width: 100%;
+  max-width: $max;
+  margin-inline: auto;
+  padding-inline: $space-12;
+
+  @media (max-width: 1024px) {
+    padding-inline: $space-8;
+  }
+
+  @media (max-width: 768px) {
+    padding-inline: $space-6;
+  }
+
+  @media (max-width: 480px) {
+    padding-inline: $space-5;
+  }
+}
+
+@mixin section-padding($top: $space-40, $bottom: $space-40) {
+  padding-top: $top;
+  padding-bottom: $bottom;
+
+  @media (max-width: 1024px) {
+    padding-top: $space-32;
+    padding-bottom: $space-32;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: $space-20;
+    padding-bottom: $space-20;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin absolute-fill {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin hover-lift {
+  transition: transform 0.5s $ease-out-expo;
+  &:hover {
+    transform: translateY(-6px);
+  }
+}

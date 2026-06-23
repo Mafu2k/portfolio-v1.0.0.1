@@ -1,0 +1,142 @@
+.footer {
+  background: $color-paper-2;
+  border-top: 1px solid $color-line;
+
+  &__cta {
+    @include section-padding($space-40, $space-24);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__cta-label {
+    margin-bottom: $space-8;
+    display: block;
+  }
+
+  &__cta-title {
+    font-family: $font-display;
+    font-size: $text-hero;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 0.95;
+    letter-spacing: -0.03em;
+    color: $color-ink;
+    margin-bottom: $space-10;
+    overflow: hidden;
+    display: block;
+
+    .word {
+      display: inline-block;
+      will-change: transform;
+    }
+  }
+
+  &__cta-email {
+    font-family: $font-body;
+    font-size: $text-md;
+    font-weight: 300;
+    color: $color-ink-muted;
+    letter-spacing: -0.01em;
+    position: relative;
+    display: inline-block;
+    transition: color 0.3s $ease-out-expo;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: $color-accent;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform 0.5s $ease-out-expo;
+    }
+
+    &:hover {
+      color: $color-accent-deep;
+
+      &::after {
+        transform: scaleX(1);
+        transform-origin: left center;
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid $color-line;
+    padding: $space-8 0;
+  }
+
+  &__bottom-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space-6;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $space-6;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    gap: $space-1;
+  }
+
+  &__logo {
+    font-family: $font-mono;
+    font-size: $text-xs;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: $color-ink;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__tagline {
+    font-family: $font-body;
+    font-size: $text-xs;
+    color: $color-ink-subtle;
+    font-weight: 300;
+  }
+
+  &__links {
+    ul {
+      display: flex;
+      gap: $space-6;
+      list-style: none;
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        gap: $space-3;
+      }
+    }
+  }
+
+  &__social-link {
+    font-family: $font-body;
+    font-size: $text-sm;
+    font-weight: 300;
+    color: $color-ink-muted;
+    transition: color 0.3s ease;
+    letter-spacing: 0.02em;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &__copy {
+    font-size: $text-xs;
+    color: $color-ink-subtle;
+  }
+}

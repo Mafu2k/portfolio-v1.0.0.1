@@ -1,0 +1,9 @@
+.page-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: $z-transition;
+  background: $color-ink;
+  pointer-events: none;
+  will-change: transform;
+  transform-origin: top center;
+}
