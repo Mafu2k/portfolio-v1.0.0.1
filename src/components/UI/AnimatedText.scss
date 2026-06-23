@@ -1,0 +1,17 @@
+.animated-text {
+  position: relative;
+  display: block;
+}
+
+.anim-word-clip {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+  margin-bottom: -0.1em;
+}
+
+.anim-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}

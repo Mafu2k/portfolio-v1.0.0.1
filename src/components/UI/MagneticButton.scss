@@ -1,0 +1,81 @@
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: $space-4 $space-8;
+  border-radius: $radius-full;
+  overflow: hidden;
+  white-space: nowrap;
+  will-change: transform;
+
+  &__inner {
+    position: relative;
+    z-index: 1;
+    font-family: $font-mono;
+    font-size: $text-xs;
+    font-weight: 400;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    will-change: transform;
+    transition: color 0.3s ease;
+    display: block;
+  }
+
+  &__fill {
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    pointer-events: none;
+    clip-path: circle(0% at 50% 50%);
+  }
+
+  &--outline {
+    border: 1px solid $color-line;
+    color: $color-ink;
+    background: transparent;
+
+    .magnetic-btn__fill {
+      background: $color-ink;
+    }
+
+    &:hover .magnetic-btn__inner {
+      color: $color-paper;
+    }
+  }
+
+  &--solid {
+    background: $color-ink;
+    color: $color-paper;
+    border: 1px solid $color-ink;
+
+    .magnetic-btn__fill {
+      background: $color-accent-deep;
+    }
+  }
+
+  &--ghost {
+    color: $color-ink-muted;
+    background: transparent;
+    border: 1px solid transparent;
+
+    .magnetic-btn__fill {
+      background: transparent;
+    }
+
+    &:hover .magnetic-btn__inner {
+      color: $color-ink;
+    }
+  }
+
+  &[aria-disabled="true"],
+  &:disabled {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    outline: 1.5px solid $color-ink;
+    outline-offset: 4px;
+  }
+}
